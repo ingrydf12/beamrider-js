@@ -4,11 +4,12 @@ let enemy = [],
   bg,
   spr1,
   spr2,
-  gif,
+  carro,
   owner;
 let score = 0;
 
 function preload() {
+  carro = loadImage("./assets/carro.png");
   spr1 = loadImage("./assets/spr1.png");
   spr2 = loadImage("./assets/spr2.png");
   bg = loadImage("./assets/bg.png");
@@ -20,7 +21,7 @@ function setup() {
   noCursor();
   player = new Player(width / 2, height * 0.875);
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {
     enemy[i] = new Enemy(int(random(0, width)), height * 0.6);
   }
 }
@@ -49,7 +50,7 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(window.innerWidth, window.innerHeight);
-  player.x = width / 2; // Reposiciona o jogador ao centro
+  player.x = width / 2;
 }
 
 function mira() {
@@ -61,11 +62,14 @@ function mira() {
 }
 
 function homeGame() {
+  image(carro, width * 0.401, height * 0.08, width / 5, width/5);
+
+
   fill("#fafafa");
   textAlign(CENTER);
   textStyle(BOLD);
   textSize(40);
-  text("BEAM RIDER", width / 2, height / 2 - 50);
+  text("BEAM RIDER", width / 2, height * 0.5);
 
   // Botão "JOGAR"
   fill("#fafafa");
