@@ -18,10 +18,10 @@ function preload() {
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   noCursor();
-  player = new Player(width / 2, height - 80);
+  player = new Player(width / 2, height * 0.875);
 
   for (let i = 0; i < 3; i++) {
-    enemy[i] = new Enemy(int(random(0, width)), 180);
+    enemy[i] = new Enemy(int(random(0, width)), height * 0.6);
   }
 }
 

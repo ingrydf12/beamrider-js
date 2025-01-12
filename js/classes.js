@@ -1,7 +1,7 @@
 class Player {
     constructor(x, y) {
       this.pos = createVector(x, y);
-      this.vel = 3;
+      this.vel = 5;
       this.sprite = spr1;
       this.bullets = [];
       this.tam = 32;
@@ -54,7 +54,7 @@ class Player {
   class Enemy {
     constructor(x, y) {
       this.pos = createVector(x, y);
-      this.vel = 1.5;
+      this.vel = 1;
       this.sprite = spr2;
       this.tam = 32;
     }
